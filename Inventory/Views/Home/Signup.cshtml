@@ -1,4 +1,44 @@
 ﻿
 @{
 }
-<p>register</p>
+@{
+}
+<div class="container min-vh-100  d-flex justify-content-center align-items-center">
+
+    <form class="form-group shadow p-3 mb-5 bg-white rounded  p-lg-5 " style="width:500px;">
+        <h2 class="m-3 mb-5 " style="text-align:center;">Sign up</h2>
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4 w-100">
+            <input type="text" id="form2Example1" class="form-control" placeholder="Full Name" />
+            @* <label class="form-label" for="form2Example1">Email address</label> *@
+        </div>
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4 w-100">
+            <input type="email" id="form2Example1" class="form-control" placeholder="Email address" />
+            @* <label class="form-label" for="form2Example1">Email address</label> *@
+        </div>
+
+        <!-- Password input -->
+        <div data-mdb-input-init class="form-outline mb-4 w-100">
+            <input type="password" id="form2Example2" class="form-control" placeholder="Password" />
+            @* <label class="form-label" for="form2Example2">Password</label> *@
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4 w-100">
+            <input type="password" id="form2Example2" class="form-control" placeholder="Confirm Password" />
+            @* <label class="form-label" for="form2Example2">Password</label> *@
+        </div>
+
+
+
+        <!-- Submit button -->
+        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block mb-4">Sign up</button>
+
+        <!-- Register buttons -->
+        <div class="text-center">
+            <p>Already a member? <a asp-action="Signin" style="text-decoration:none;">Sign in</a></p>
+
+            </button>
+        </div>
+    </form>
+</div>
