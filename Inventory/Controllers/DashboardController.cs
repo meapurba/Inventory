@@ -8,5 +8,10 @@ namespace Inventory.Controllers
         {
             return View();
         }
+        public IActionResult Product()
+        {
+            ViewBag.Active = "product";
+            return View();
+        }
     }
 }

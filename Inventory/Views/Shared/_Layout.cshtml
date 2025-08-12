@@ -29,7 +29,7 @@
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="">
             <a href="#" class="">
-                <i class='bx bxs-user nav_icon'></i>
+                <i class='bx bx-user nav_icon'></i>
                 <span class="nav_name">Acount</span>
             </a>
 
@@ -37,40 +37,48 @@
     </header>
     <div class="con">
     <div class="l-navbar position-fixed vh-100 " id="nav-bar">
+            @{
+                var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+                var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+            }
         <nav class="nav">
             <div>
                 <a href="#" class="nav_logo">
                     <span class="nav_logo-name">
-                        Inventory
+                        INventory
                     </span>
                 </a>
                 <div class="nav_list">
-                    <a asp-action="Index" class="nav_link active">
-                        <i class='bx bx-grid-alt nav_icon'></i>
-                        <span class="nav_name">Stat</span>
+                        <a class="nav_link nav_link @(currentController == "Dashboard" ? "active" : "")" asp-controller="Dashboard" asp-action="Index" >
+                        <i class='bx bxs-dashboard nav_icon'></i>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+                        <a  class="nav_link @(currentController == "Product" ? "active" : "")" asp-controller="Product" asp-action="Index" >
+                        <i class='bx bx-barcode nav_icon'></i>
+                        <span class="nav_name">Product</span>
                     </a>
                     <a asp-action="Index" class="nav_link">
-                        <i class='bx bx-user nav_icon'></i>
-                        <span class="nav_name">Users</span>
+                            <i class='bx bxs-calculator nav_icon'></i>
+                        <span class="nav_name">Inventory</span>
                     </a>
                     <a asp-action="Index" class="nav_link">
-                        <i class='bx bx-message-square-detail nav_icon'></i>
-                        <span class="nav_name">Messages</span>
+                            <i class='bx bx-building-house nav_icon'></i>
+                        <span class="nav_name">Warehouse</span>
                     </a>
                     <a asp-action="Index" class="nav_link">
-                        <i class='bx bx-bookmark nav_icon'></i>
-                        <span class="nav_name">Bookmark</span>
+                        <i class='bx bx-cart-add nav_icon'></i>
+                        <span class="nav_name">Suppliers</span>
                     </a>
                     <a asp-action="Index" class="nav_link">
-                        <i class='bx bx-folder nav_icon'></i>
-                        <span class="nav_name">Files</span>
+                            <i class='bx bx-notepad nav_icon'></i>
+                        <span class="nav_name">Sales orders</span>
                     </a>
-                    <a asp-action="Index" class="nav_link">
-                        <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
-                        <span class="nav_name">Stats</span>
-                    </a>
+                        <a asp-action="Index" class="nav_link">
+                            <i class='bx bx-purchase-tag nav_icon'></i>
+                            <span class="nav_name">Purchase orders</span>
+                        </a>
                 </div>
-                </div> <a asp-action="Index" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+                </div> <a asp-action="Index" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
     </div>
     </div>
