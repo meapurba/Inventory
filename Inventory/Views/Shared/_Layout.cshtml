@@ -57,25 +57,25 @@
                         <i class='bx bx-barcode nav_icon'></i>
                         <span class="nav_name">Product</span>
                     </a>
-                    <a asp-action="Index" class="nav_link">
+                        <a  class="nav_link @(currentController == "Inventory" ? "active" : "")" asp-controller="Inventory" asp-action="Index" >
                             <i class='bx bxs-calculator nav_icon'></i>
                         <span class="nav_name">Inventory</span>
                     </a>
-                    <a asp-action="Index" class="nav_link">
+                        <a class="nav_link @(currentController == "Warehouse" ? "active" : "")" asp-controller="Warehouse" asp-action="Index">
                             <i class='bx bx-building-house nav_icon'></i>
                         <span class="nav_name">Warehouse</span>
                     </a>
-                    <a asp-action="Index" class="nav_link">
-                        <i class='bx bx-cart-add nav_icon'></i>
-                        <span class="nav_name">Suppliers</span>
+                        <a class="nav_link @(currentController == "Supplier" ? "active" : "")" asp-controller="Supplier" asp-action="Index">
+                            <i class='bx bx-cart-add nav_icon'></i>
+                        <span class="nav_name">Supplier</span>
                     </a>
-                    <a asp-action="Index" class="nav_link">
+                        <a class="nav_link @(currentController == "Salesorder" ? "active" : "")" asp-controller="Salesorder" asp-action="Index">
                             <i class='bx bx-notepad nav_icon'></i>
-                        <span class="nav_name">Sales orders</span>
+                        <span class="nav_name">Sales order</span>
                     </a>
-                        <a asp-action="Index" class="nav_link">
+                        <a class="nav_link @(currentController == "Purchaseorder" ? "active" : "")" asp-controller="Purchaseorder" asp-action="Index">
                             <i class='bx bx-purchase-tag nav_icon'></i>
-                            <span class="nav_name">Purchase orders</span>
+                            <span class="nav_name">Purchase order</span>
                         </a>
                 </div>
                 </div> <a asp-action="Index" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>

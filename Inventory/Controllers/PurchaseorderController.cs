@@ -2,12 +2,11 @@
 
 namespace Inventory.Controllers
 {
-    public class DashboardController : Controller
+    public class PurchaseorderController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-        
     }
 }
