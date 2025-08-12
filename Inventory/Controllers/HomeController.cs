@@ -18,7 +18,11 @@ namespace Inventory.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Signup()
+        {
+            return View();
+        }
+        public IActionResult Signin()
         {
             return View();
         }
