@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Inventory</title>
+    <title>@ViewData["Title"] Inventory</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/nav.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inventory.styles.css" asp-append-version="true" />
     <!-- Option 1: Include in HTML -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -25,68 +26,11 @@
 
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="">
-            <a href="#" class="">
-                <i class='bx bx-user nav_icon'></i>
-                <span class="nav_name">Acount</span>
-            </a>
-
-        </div>
-    </header>
-    <div class="con">
-    <div class="l-navbar position-fixed vh-100 " id="nav-bar">
-            @{
-                var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
-                var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
-            }
-        <nav class="nav">
-            <div>
-                <a href="#" class="nav_logo">
-                    <span class="nav_logo-name">
-                        INventory
-                    </span>
-                </a>
-                <div class="nav_list">
-                        <a class="nav_link nav_link @(currentController == "Dashboard" ? "active" : "")" asp-controller="Dashboard" asp-action="Index" >
-                        <i class='bx bxs-dashboard nav_icon'></i>
-                        <span class="nav_name">Dashboard</span>
-                    </a>
-                        <a  class="nav_link @(currentController == "Product" ? "active" : "")" asp-controller="Product" asp-action="Index" >
-                        <i class='bx bx-barcode nav_icon'></i>
-                        <span class="nav_name">Product</span>
-                    </a>
-                        <a  class="nav_link @(currentController == "Inventory" ? "active" : "")" asp-controller="Inventory" asp-action="Index" >
-                            <i class='bx bxs-calculator nav_icon'></i>
-                        <span class="nav_name">Inventory</span>
-                    </a>
-                        <a class="nav_link @(currentController == "Warehouse" ? "active" : "")" asp-controller="Warehouse" asp-action="Index">
-                            <i class='bx bx-building-house nav_icon'></i>
-                        <span class="nav_name">Warehouse</span>
-                    </a>
-                        <a class="nav_link @(currentController == "Supplier" ? "active" : "")" asp-controller="Supplier" asp-action="Index">
-                            <i class='bx bx-cart-add nav_icon'></i>
-                        <span class="nav_name">Supplier</span>
-                    </a>
-                        <a class="nav_link @(currentController == "Salesorder" ? "active" : "")" asp-controller="Salesorder" asp-action="Index">
-                            <i class='bx bx-notepad nav_icon'></i>
-                        <span class="nav_name">Sales order</span>
-                    </a>
-                        <a class="nav_link @(currentController == "Purchaseorder" ? "active" : "")" asp-controller="Purchaseorder" asp-action="Index">
-                            <i class='bx bx-purchase-tag nav_icon'></i>
-                            <span class="nav_name">Purchase order</span>
-                        </a>
-                </div>
-                </div> <a asp-action="Index" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
-        </nav>
-    </div>
-    </div>
-    <!--Container Main start-->
-    @* <div class="height-100 bg-light"> *@
-        <main role="main" class="">
-            @RenderBody()
-        </main>
+   @await Html.PartialAsync("_AdminNavbar")
+   @* @await Html.PartialAsync("_ManagerNavbar"); *@
+   <main role="main" class="">
+     @RenderBody()
+   </main>
     @* </div> *@
     <!--Container Main end-->
         @* <main role="main"">
